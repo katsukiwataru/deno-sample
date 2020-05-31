@@ -1,6 +1,4 @@
-import { serve } from "https://deno.land/std@0.50.0/http/server.ts";
-const s = serve({ port: 8000 });
-console.log("http://localhost:8000/");
-for await (const req of s) {
-  req.respond({ body: "Hello World\n" });
-}
+const res = await fetch('https://pokeapi.co/api/v2/pokemon/1')
+const json = res.json()
+const data = await json
+console.log(data)
